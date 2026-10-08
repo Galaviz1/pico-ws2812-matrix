@@ -24,8 +24,8 @@ TRANSPOSE = True
 
 # Which edge the scrolling text comes in from: "left" (moves left to right) or
 # "right" (moves right to left). Only the motion changes; the letters stay
-# upright and unmirrored either way. "right" reads in normal word order.
-SCROLL_FROM = "right"
+# upright and unmirrored either way. "left" chosen on the bench, 2026-10-08.
+SCROLL_FROM = "left"
 
 # 0.0 to 1.0. WS2812Bs are very bright; 0.1 is plenty indoors and on camera.
 BRIGHTNESS = 0.1
