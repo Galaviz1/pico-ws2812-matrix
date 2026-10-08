@@ -1,7 +1,8 @@
 """Channel sign for an 8x8 WS2812B panel: Paradox Transistor Lab.
 
-Loop: a rainbow wipe, the YouTube play logo fading in, the channel name
-scrolling across in a moving rainbow, then the logo again.
+Loop: a rainbow wipe, the play-button logo fading in, then the logo sliding
+out to the left with the channel name right behind it, in a rainbow, as one
+continuous ticker.
 
     ./run_on_pico.sh sign.py          run it (Ctrl-C stops and blanks the panel)
     python3 preview.py                render the same frames to docs/sign.gif
@@ -15,6 +16,8 @@ from font import text_columns
 
 TEXT = "Paradox Transistor Lab"
 SCROLL_MS = 55            # per 1-column step: ~18 columns per second
+LOGO_GAP = 2              # blank columns between the logo and the first letter
+LOGO_HOLD_MS = 1500       # how long the logo stays still before sliding out
 W = H = 8
 
 RED = (255, 0, 0)
@@ -76,45 +79,61 @@ def wipe():
         yield px, 30
 
 
-def logo(hold_ms=1500):
-    for i in range(1, 11):
-        yield logo_frame(i / 10), 40
-    yield logo_frame(), hold_ms
-    for i in range(9, -1, -1):
-        yield logo_frame(i / 10), 30
+def _logo_columns():
+    """The logo as a list of 8 columns, each a list of 8 colours (top to bottom)."""
+    cols = []
+    for x in range(W):
+        col = []
+        for y in range(H):
+            ch = LOGO[y][x]
+            col.append(RED if ch == "R" else WHITE if ch == "W" else OFF)
+        cols.append(col)
+    return cols
+
+
+def _text_columns(text):
+    """The text as coloured columns, each column a rainbow step along the text."""
+    cols = []
+    for i, mask in enumerate(text_columns(text)):
+        colour = hsv((i / 40.0) % 1.0)
+        cols.append([colour if mask >> y & 1 else OFF for y in range(H)])
+    return cols
 
 
 def scroll(text=TEXT, step_ms=SCROLL_MS):
-    """Text slides across in a moving rainbow, entering from config.SCROLL_FROM.
+    """The logo slides out and the text follows right behind it, as one ticker.
 
-    Only the window's direction of travel changes; the columns are drawn the
-    same way, so the letters stay upright and readable either way. From the
-    left, the end of the text ("Lab") arrives first.
+    SCROLL_FROM "right": the logo leaves on the left and the first letter (P)
+    comes in from the right, so the name reads in order. "left" runs the same
+    ticker the other way round. The letters stay upright either way.
     """
-    strip = [0] * W + text_columns(text) + [0] * W
-    last = len(strip) - W
+    blank_col = [OFF] * H
+    logo, words = _logo_columns(), _text_columns(text)
+    gap = [blank_col] * LOGO_GAP
     if getattr(config, "SCROLL_FROM", "right") == "left":
-        offsets = range(last, -1, -1)
+        # Mirror image of the ticker's motion, not of the letters: the logo
+        # sits at the right end and leaves to the right, the text follows.
+        strip = [blank_col] * W + words + gap + logo
+        offsets = range(len(strip) - W, -1, -1)
     else:
-        offsets = range(last + 1)
+        strip = logo + gap + words + [blank_col] * W
+        offsets = range(len(strip) - W + 1)
     for offset in offsets:
         px = blank()
         for x in range(W):
             col = strip[offset + x]
-            if col:
-                colour = hsv(((offset + x) / 40.0) % 1.0)
-                for y in range(H):
-                    if col >> y & 1:
-                        px[y * W + x] = colour
+            for y in range(H):
+                px[y * W + x] = col[y]
         yield px, step_ms
 
 
 def frames():
-    """One full cycle of the sign."""
+    """One full cycle: rainbow wipe, logo fades in and holds, then the ticker."""
     yield from wipe()
-    yield from logo()
+    for i in range(1, 11):
+        yield logo_frame(i / 10), 40
+    yield logo_frame(), LOGO_HOLD_MS
     yield from scroll()
-    yield from logo(hold_ms=1000)
 
 
 def main():
