@@ -45,6 +45,10 @@ this is exactly what the panel shows (one 12 s cycle).*
 5. **Panel lead** (input end): **red → + rail**, **white → − rail**,
    **green → i28**.
 
+- **Orientation as set up here:** LED 0, where the input wires attach, is the
+  **bottom-left** LED, and the chain runs right along the bottom row then
+  zig-zags upward. `config.py` has `FLIP_Y = True` for that. If you mount the
+  panel another way, run `test_matrix.py` and adjust the flips.
 - **Use the panel's input end.** The flexible panel has an input (DIN) and an
   output (DOUT) connector; the arrows printed next to the LEDs point away from
   the input. Data sent into DOUT does nothing.
@@ -163,6 +167,7 @@ it on the panel.
 | Image mirrored, upside down or rotated | Panel held a different way than assumed | Run `test_matrix.py` and note which colour lands in the top-left and top-right corners; set `FLIP_X`, `FLIP_Y`, `TRANSPOSE` until red is top-left and green top-right. The YouTube logo is symmetric top to bottom, so it can't show an upside-down panel; the corners can |
 | Red and green swapped | Not a GRB WS2812B | Swap the first two values in `Matrix.show()` |
 | Pico resets when the panel gets bright | USB supply sagging | Lower `MAX_MA`, or move the panel to a separate 5 V supply |
+| A change to `config.py` / `matrix.py` / `font.py` seems to do nothing | The board was still using a copy imported by an earlier run | Run through `run_on_pico.sh`, which clears those modules before every run (older versions didn't) |
 | `ModuleNotFoundError: No module named 'machine'` | Ran the file on the computer | Use `./run_on_pico.sh`; only `preview.py` runs on the computer |
 
 ## License

@@ -13,14 +13,16 @@ HEIGHT = 8
 #   FLIP_X      mirror left/right
 #   FLIP_Y      mirror top/bottom
 #   TRANSPOSE   the chain runs in columns instead of rows
-# Measured on the bench (2026-10-08) with the corner test, panel held as it is
-# mounted: with FLIP_X + TRANSPOSE, green showed top-left and red top-right,
-# i.e. one left-right mirror too many. TRANSPOSE alone puts red top-left,
-# green top-right: this panel's chain runs in columns as held.
+# Orientation as mounted on the bench (2026-10-08). LED 0, where the input
+# wires attach, is the BOTTOM-LEFT LED and the chain runs right along the
+# bottom row, zig-zagging upward: FLIP_Y is the one mapping needed. Measured
+# with the board really running no flips (corner test: blue top-left, red
+# bottom-left; test "P" photographed as a "b"). Earlier changes here had not
+# reached the board: see the module-cache note in run_on_pico.sh.
 SERPENTINE = True
 FLIP_X = False
-FLIP_Y = False
-TRANSPOSE = True
+FLIP_Y = True
+TRANSPOSE = False
 
 # Which edge the scrolling text comes in from: "left" (moves left to right) or
 # "right" (moves right to left). Only the motion changes; the letters stay

@@ -63,6 +63,16 @@ for f in $LIBS; do
   PORT=$(prepare) || exit 1
 done
 
+# `resume` keeps the interpreter alive between runs, and with it every module
+# imported by an earlier run. Without this, `import config` keeps returning the
+# copy loaded right after the board booted, and edits to config.py, matrix.py
+# or font.py never take effect (2026-10-08: every orientation change on the
+# bench was silently ignored until this was added).
+mp exec "import sys
+for k in ('config', 'matrix', 'font', 'sign'):
+    sys.modules.pop(k, None)" >/dev/null || exit 1
+PORT=$(prepare) || exit 1
+
 if [ "$INSTALL" = 1 ]; then
   mp cp "$FILE" :main.py >/dev/null || exit 1
   echo "Installed $FILE as main.py: it runs whenever the board powers up."
