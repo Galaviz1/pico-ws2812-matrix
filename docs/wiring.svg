@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-label="Wiring: Pico GP2 (pin 4) through a 330 ohm resistor to the panel DIN; Pico VBUS (pin 40) to the panel 5V; Pico GND (pin 38) to the panel GND; a 1000 microfarad capacitor across the panel 5V and GND.">
+<style>
+svg{font-family:"IBM Plex Mono",Menlo,Consolas,monospace}
+text{fill:#17191a;font-size:12px}
+.t{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:15px}
+.h{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:16px}
+.m{fill:#5b625e;font-size:11px}
+.pl{fill:#c9d2dc;font-size:9px}.pu{fill:#ffd34d;font-size:9px;font-weight:700}
+.w{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+</style>
+<rect width="900" height="500" fill="#ffffff"/>
+<text class="h" x="24" y="26">Pico to 8×8 WS2812B panel</text>
+<rect x="120" y="70" width="180" height="350" rx="8" fill="#1f6b3a"/>
+<rect x="188" y="58" width="44" height="22" rx="4" fill="#c8cbd0" stroke="#8b9097"/>
+<text x="210" y="252" text-anchor="middle" style="fill:#e8f2ea;font-weight:700;font-size:14px">Raspberry</text>
+<text x="210" y="268" text-anchor="middle" style="fill:#e8f2ea;font-weight:700;font-size:14px">Pi Pico</text>
+<text x="210" y="285" text-anchor="middle" style="fill:#bfe0c8;font-size:10px">USB on top</text>
+<circle cx="128" cy="96" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="99">GP0</text>
+<text class="m" x="114" y="100" text-anchor="end" style="font-size:9px">1</text>
+<circle cx="128" cy="112" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="115">GP1</text>
+<text class="m" x="114" y="116" text-anchor="end" style="font-size:9px">2</text>
+<circle cx="128" cy="128" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="131">GND</text>
+<text class="m" x="114" y="132" text-anchor="end" style="font-size:9px">3</text>
+<circle cx="128" cy="144" r="3.5" fill="#ffd34d"/><text class="pu" x="136" y="147">GP2</text>
+<text class="m" x="114" y="148" text-anchor="end" style="font-size:9px">4</text>
+<circle cx="128" cy="160" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="163">GP3</text>
+<text class="m" x="114" y="164" text-anchor="end" style="font-size:9px">5</text>
+<circle cx="128" cy="176" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="179">GP4</text>
+<text class="m" x="114" y="180" text-anchor="end" style="font-size:9px">6</text>
+<circle cx="128" cy="192" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="195">GP5</text>
+<text class="m" x="114" y="196" text-anchor="end" style="font-size:9px">7</text>
+<circle cx="128" cy="208" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="211">GND</text>
+<text class="m" x="114" y="212" text-anchor="end" style="font-size:9px">8</text>
+<circle cx="128" cy="224" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="227">GP6</text>
+<text class="m" x="114" y="228" text-anchor="end" style="font-size:9px">9</text>
+<circle cx="128" cy="240" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="243">GP7</text>
+<text class="m" x="114" y="244" text-anchor="end" style="font-size:9px">10</text>
+<circle cx="128" cy="256" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="259">GP8</text>
+<text class="m" x="114" y="260" text-anchor="end" style="font-size:9px">11</text>
+<circle cx="128" cy="272" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="275">GP9</text>
+<text class="m" x="114" y="276" text-anchor="end" style="font-size:9px">12</text>
+<circle cx="128" cy="288" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="291">GND</text>
+<text class="m" x="114" y="292" text-anchor="end" style="font-size:9px">13</text>
+<circle cx="128" cy="304" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="307">GP10</text>
+<text class="m" x="114" y="308" text-anchor="end" style="font-size:9px">14</text>
+<circle cx="128" cy="320" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="323">GP11</text>
+<text class="m" x="114" y="324" text-anchor="end" style="font-size:9px">15</text>
+<circle cx="128" cy="336" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="339">GP12</text>
+<text class="m" x="114" y="340" text-anchor="end" style="font-size:9px">16</text>
+<circle cx="128" cy="352" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="355">GP13</text>
+<text class="m" x="114" y="356" text-anchor="end" style="font-size:9px">17</text>
+<circle cx="128" cy="368" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="371">GND</text>
+<text class="m" x="114" y="372" text-anchor="end" style="font-size:9px">18</text>
+<circle cx="128" cy="384" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="387">GP14</text>
+<text class="m" x="114" y="388" text-anchor="end" style="font-size:9px">19</text>
+<circle cx="128" cy="400" r="3.5" fill="#9aa3ad"/><text class="pl" x="136" y="403">GP15</text>
+<text class="m" x="114" y="404" text-anchor="end" style="font-size:9px">20</text>
+<circle cx="292" cy="96" r="3.5" fill="#ffd34d"/><text class="pu" x="284" y="99" text-anchor="end">VBUS</text>
+<text class="m" x="306" y="100" style="font-size:9px">40</text>
+<circle cx="292" cy="112" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="115" text-anchor="end">VSYS</text>
+<text class="m" x="306" y="116" style="font-size:9px">39</text>
+<circle cx="292" cy="128" r="3.5" fill="#ffd34d"/><text class="pu" x="284" y="131" text-anchor="end">GND</text>
+<text class="m" x="306" y="132" style="font-size:9px">38</text>
+<circle cx="292" cy="144" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="147" text-anchor="end">3V3_EN</text>
+<text class="m" x="306" y="148" style="font-size:9px">37</text>
+<circle cx="292" cy="160" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="163" text-anchor="end">3V3</text>
+<text class="m" x="306" y="164" style="font-size:9px">36</text>
+<circle cx="292" cy="176" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="179" text-anchor="end">ADC_VREF</text>
+<text class="m" x="306" y="180" style="font-size:9px">35</text>
+<circle cx="292" cy="192" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="195" text-anchor="end">GP28</text>
+<text class="m" x="306" y="196" style="font-size:9px">34</text>
+<circle cx="292" cy="208" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="211" text-anchor="end">GND</text>
+<text class="m" x="306" y="212" style="font-size:9px">33</text>
+<circle cx="292" cy="224" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="227" text-anchor="end">GP27</text>
+<text class="m" x="306" y="228" style="font-size:9px">32</text>
+<circle cx="292" cy="240" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="243" text-anchor="end">GP26</text>
+<text class="m" x="306" y="244" style="font-size:9px">31</text>
+<circle cx="292" cy="256" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="259" text-anchor="end">RUN</text>
+<text class="m" x="306" y="260" style="font-size:9px">30</text>
+<circle cx="292" cy="272" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="275" text-anchor="end">GP22</text>
+<text class="m" x="306" y="276" style="font-size:9px">29</text>
+<circle cx="292" cy="288" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="291" text-anchor="end">GND</text>
+<text class="m" x="306" y="292" style="font-size:9px">28</text>
+<circle cx="292" cy="304" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="307" text-anchor="end">GP21</text>
+<text class="m" x="306" y="308" style="font-size:9px">27</text>
+<circle cx="292" cy="320" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="323" text-anchor="end">GP20</text>
+<text class="m" x="306" y="324" style="font-size:9px">26</text>
+<circle cx="292" cy="336" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="339" text-anchor="end">GP19</text>
+<text class="m" x="306" y="340" style="font-size:9px">25</text>
+<circle cx="292" cy="352" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="355" text-anchor="end">GP18</text>
+<text class="m" x="306" y="356" style="font-size:9px">24</text>
+<circle cx="292" cy="368" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="371" text-anchor="end">GND</text>
+<text class="m" x="306" y="372" style="font-size:9px">23</text>
+<circle cx="292" cy="384" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="387" text-anchor="end">GP17</text>
+<text class="m" x="306" y="388" style="font-size:9px">22</text>
+<circle cx="292" cy="400" r="3.5" fill="#9aa3ad"/><text class="pl" x="284" y="403" text-anchor="end">GP16</text>
+<text class="m" x="306" y="404" style="font-size:9px">21</text>
+<rect x="650" y="150" width="200" height="200" rx="6" fill="#16181a"/>
+<circle cx="669" cy="169" r="7" fill="rgb(255,0,0)"/>
+<circle cx="692" cy="169" r="7" fill="rgb(255,95,0)"/>
+<circle cx="715" cy="169" r="7" fill="rgb(255,191,0)"/>
+<circle cx="738" cy="169" r="7" fill="rgb(223,255,0)"/>
+<circle cx="761" cy="169" r="7" fill="rgb(127,255,0)"/>
+<circle cx="784" cy="169" r="7" fill="rgb(31,255,0)"/>
+<circle cx="807" cy="169" r="7" fill="rgb(0,255,63)"/>
+<circle cx="830" cy="169" r="7" fill="rgb(0,255,159)"/>
+<circle cx="669" cy="192" r="7" fill="rgb(255,95,0)"/>
+<circle cx="692" cy="192" r="7" fill="rgb(255,191,0)"/>
+<circle cx="715" cy="192" r="7" fill="rgb(223,255,0)"/>
+<circle cx="738" cy="192" r="7" fill="rgb(127,255,0)"/>
+<circle cx="761" cy="192" r="7" fill="rgb(31,255,0)"/>
+<circle cx="784" cy="192" r="7" fill="rgb(0,255,63)"/>
+<circle cx="807" cy="192" r="7" fill="rgb(0,255,159)"/>
+<circle cx="830" cy="192" r="7" fill="rgb(0,255,255)"/>
+<circle cx="669" cy="215" r="7" fill="rgb(255,191,0)"/>
+<circle cx="692" cy="215" r="7" fill="rgb(223,255,0)"/>
+<circle cx="715" cy="215" r="7" fill="rgb(127,255,0)"/>
+<circle cx="738" cy="215" r="7" fill="rgb(31,255,0)"/>
+<circle cx="761" cy="215" r="7" fill="rgb(0,255,63)"/>
+<circle cx="784" cy="215" r="7" fill="rgb(0,255,159)"/>
+<circle cx="807" cy="215" r="7" fill="rgb(0,255,255)"/>
+<circle cx="830" cy="215" r="7" fill="rgb(0,159,255)"/>
+<circle cx="669" cy="238" r="7" fill="rgb(223,255,0)"/>
+<circle cx="692" cy="238" r="7" fill="rgb(127,255,0)"/>
+<circle cx="715" cy="238" r="7" fill="rgb(31,255,0)"/>
+<circle cx="738" cy="238" r="7" fill="rgb(0,255,63)"/>
+<circle cx="761" cy="238" r="7" fill="rgb(0,255,159)"/>
+<circle cx="784" cy="238" r="7" fill="rgb(0,255,255)"/>
+<circle cx="807" cy="238" r="7" fill="rgb(0,159,255)"/>
+<circle cx="830" cy="238" r="7" fill="rgb(0,63,255)"/>
+<circle cx="669" cy="261" r="7" fill="rgb(127,255,0)"/>
+<circle cx="692" cy="261" r="7" fill="rgb(31,255,0)"/>
+<circle cx="715" cy="261" r="7" fill="rgb(0,255,63)"/>
+<circle cx="738" cy="261" r="7" fill="rgb(0,255,159)"/>
+<circle cx="761" cy="261" r="7" fill="rgb(0,255,255)"/>
+<circle cx="784" cy="261" r="7" fill="rgb(0,159,255)"/>
+<circle cx="807" cy="261" r="7" fill="rgb(0,63,255)"/>
+<circle cx="830" cy="261" r="7" fill="rgb(31,0,255)"/>
+<circle cx="669" cy="284" r="7" fill="rgb(31,255,0)"/>
+<circle cx="692" cy="284" r="7" fill="rgb(0,255,63)"/>
+<circle cx="715" cy="284" r="7" fill="rgb(0,255,159)"/>
+<circle cx="738" cy="284" r="7" fill="rgb(0,255,255)"/>
+<circle cx="761" cy="284" r="7" fill="rgb(0,159,255)"/>
+<circle cx="784" cy="284" r="7" fill="rgb(0,63,255)"/>
+<circle cx="807" cy="284" r="7" fill="rgb(31,0,255)"/>
+<circle cx="830" cy="284" r="7" fill="rgb(127,0,255)"/>
+<circle cx="669" cy="307" r="7" fill="rgb(0,255,63)"/>
+<circle cx="692" cy="307" r="7" fill="rgb(0,255,159)"/>
+<circle cx="715" cy="307" r="7" fill="rgb(0,255,255)"/>
+<circle cx="738" cy="307" r="7" fill="rgb(0,159,255)"/>
+<circle cx="761" cy="307" r="7" fill="rgb(0,63,255)"/>
+<circle cx="784" cy="307" r="7" fill="rgb(31,0,255)"/>
+<circle cx="807" cy="307" r="7" fill="rgb(127,0,255)"/>
+<circle cx="830" cy="307" r="7" fill="rgb(223,0,255)"/>
+<circle cx="669" cy="330" r="7" fill="rgb(0,255,159)"/>
+<circle cx="692" cy="330" r="7" fill="rgb(0,255,255)"/>
+<circle cx="715" cy="330" r="7" fill="rgb(0,159,255)"/>
+<circle cx="738" cy="330" r="7" fill="rgb(0,63,255)"/>
+<circle cx="761" cy="330" r="7" fill="rgb(31,0,255)"/>
+<circle cx="784" cy="330" r="7" fill="rgb(127,0,255)"/>
+<circle cx="807" cy="330" r="7" fill="rgb(223,0,255)"/>
+<circle cx="830" cy="330" r="7" fill="rgb(255,0,191)"/>
+<text class="t" x="750" y="378" text-anchor="middle">8×8 WS2812B panel</text>
+<text class="m" x="750" y="394" text-anchor="middle">BTF-LIGHTING ECO · 64 LEDs · 5 V</text>
+<rect x="614" y="181" width="36" height="18" rx="3" fill="#f4f5f2" stroke="#17191a"/><text x="632" y="194" text-anchor="middle" style="font-size:10px">5V</text>
+<rect x="614" y="241" width="36" height="18" rx="3" fill="#f4f5f2" stroke="#17191a"/><text x="632" y="254" text-anchor="middle" style="font-size:10px">DIN</text>
+<rect x="614" y="301" width="36" height="18" rx="3" fill="#f4f5f2" stroke="#17191a"/><text x="632" y="314" text-anchor="middle" style="font-size:10px">GND</text>
+<text class="m" x="646" y="336" text-anchor="end">panel input (DIN) end</text>
+<path class="w" stroke="#d8352a" d="M292,96 L470,96 L470,190 L614,190"/>
+<path class="w" stroke="#1f1f1f" d="M292,128 L440,128 L440,310 L614,310"/>
+<path class="w" stroke="#0e8a7e" d="M128,144 L90,144 L90,42 L520,42"/>
+<rect x="520" y="34" width="40" height="16" rx="2" fill="#e6cf9f" stroke="#9a8358"/>
+<text x="540" y="64" text-anchor="middle" style="font-size:11px">330 Ω</text>
+<path class="w" stroke="#0e8a7e" d="M560,42 L595,42 L595,250 L614,250"/>
+<path class="w" stroke="#17191a" style="stroke-width:2" d="M520,190 L520,230"/>
+<line x1="506" y1="230" x2="534" y2="230" stroke="#17191a" stroke-width="3"/>
+<path d="M506,241 Q520,234 534,241" fill="none" stroke="#17191a" stroke-width="3"/>
+<path class="w" stroke="#17191a" style="stroke-width:2" d="M520,238 L520,310"/>
+<circle cx="520" cy="190" r="3.5" fill="#17191a"/><circle cx="520" cy="310" r="3.5" fill="#17191a"/>
+<text x="540" y="239" style="font-size:11px">1000 µF</text>
+<text class="m" x="528" y="226">+</text>
+<line x1="120" y1="436" x2="146" y2="436" stroke="#d8352a" stroke-width="4" stroke-linecap="round"/><text x="156" y="440">VBUS (pin 40) → 5V</text>
+<line x1="120" y1="458" x2="146" y2="458" stroke="#1f1f1f" stroke-width="4" stroke-linecap="round"/><text x="156" y="462">GND (pin 38) → GND</text>
+<line x1="120" y1="480" x2="146" y2="480" stroke="#0e8a7e" stroke-width="4" stroke-linecap="round"/><text x="156" y="484">GP2 (pin 4) → 330 Ω → DIN</text>
+<text class="m" x="470" y="440">USB powers the panel through VBUS; the firmware</text>
+<text class="m" x="470" y="456">caps it at 300 mA. For more brightness, feed the</text>
+<text class="m" x="470" y="472">panel from a 5 V 2-4 A supply instead, join its GND</text>
+<text class="m" x="470" y="488">to the Pico GND, and raise MAX_MA in config.py.</text>
+</svg>
