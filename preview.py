@@ -45,7 +45,7 @@ def main():
         durations.append(ms)
     os.makedirs("docs", exist_ok=True)
     out = os.path.join("docs", "sign.gif")
-    # One shared 64-colour palette keeps the README GIF small (~1 MB, not ~3).
+    # 64 colours per frame keeps the README GIF ~1.4 MB instead of ~3 MB.
     pal = [im.quantize(colors=64, method=Image.MEDIANCUT) for im in images]
     pal[0].save(out, save_all=True, append_images=pal[1:], duration=durations, loop=0, optimize=True)
     print("wrote %s: %d frames, %.1f s per cycle" % (out, len(images), sum(durations) / 1000))
