@@ -31,6 +31,20 @@ this is exactly what the panel shows (one 12 s cycle).*
 | DIN | GP2, through the 330 Ω resistor | 4 |
 | GND | GND | 38 |
 
+### On a breadboard
+
+![Breadboard: Pico across the trench with USB on the left; VBUS and GND to the rails; 1000 µF across the rails; GP2 to a 330 Ω resistor and on to the panel DIN; panel 5V and GND from the rails](docs/breadboard.svg)
+
+1. **Pico across the centre trench, USB to the left.** Its pins land in rows
+   **c** and **h**, which leaves rows a–b and i–j free beside every pin.
+2. **Power to the rails:** red jumper from **a2** (VBUS, pin 40) to the **+**
+   rail, black jumper from **a4** (GND, pin 38) to the **−** rail.
+3. **1000 µF capacitor** across the two rails, striped (−) leg in the **−** rail.
+4. **Data:** green jumper from **j5** (GP2, pin 4) to **j24**, then the
+   **330 Ω** resistor from **h24** to **h28**.
+5. **Panel lead** (input end): **red → + rail**, **white → − rail**,
+   **green → i28**.
+
 - **Use the panel's input end.** The flexible panel has an input (DIN) and an
   output (DOUT) connector; the arrows printed next to the LEDs point away from
   the input. Data sent into DOUT does nothing.

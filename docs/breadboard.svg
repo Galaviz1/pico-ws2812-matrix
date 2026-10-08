@@ -1,0 +1,236 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" role="img" aria-label="Breadboard: Pico across the trench with USB on the left. VBUS (pin 40) jumpered to the plus rail, GND (pin 38) to the minus rail. GP2 (pin 4) jumpered to column 24, then a 330 ohm resistor to column 28, then the green data wire to the panel DIN. A 1000 microfarad capacitor sits across the plus and minus rails. The panel 5V (red) and GND (white) wires come from the rails.">
+<style>
+svg{font-family:"IBM Plex Mono",Menlo,Consolas,monospace}
+text{fill:#17191a;font-size:12px}
+.h{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:16px}
+.t{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:15px}
+.m{fill:#5b625e;font-size:11px}
+.idx{fill:#7d7b71;font-size:10px}
+.pl{fill:#d8e8dc;font-size:7.5px}.pu{fill:#ffd34d;font-size:8px;font-weight:700}
+.wire{fill:none;stroke-width:5;stroke-linecap:round}
+</style>
+<rect width="1000" height="470" fill="#ffffff"/>
+<text class="h" x="40" y="26">On a breadboard</text>
+<rect x="42" y="34" width="636" height="372" rx="8" fill="#eeede6" stroke="#cfccc0" stroke-width="1.5"/>
+<rect x="50" y="214" width="620" height="12" rx="2" fill="#dcdad1"/>
+<line x1="56" y1="50" x2="664" y2="50" stroke="#d0463a" stroke-width="2"/>
+<line x1="56" y1="90" x2="664" y2="90" stroke="#3a67c9" stroke-width="2"/>
+<line x1="56" y1="350" x2="664" y2="350" stroke="#3a67c9" stroke-width="2"/>
+<line x1="56" y1="390" x2="664" y2="390" stroke="#d0463a" stroke-width="2"/>
+<text x="50" y="64" text-anchor="middle" style="fill:#d0463a;font-weight:700;font-size:15px">+</text>
+<text x="50" y="84" text-anchor="middle" style="fill:#3a67c9;font-weight:700;font-size:15px">−</text>
+<path d="M67,117h6v6h-6zM67,137h6v6h-6zM67,157h6v6h-6zM67,177h6v6h-6zM67,197h6v6h-6zM67,237h6v6h-6zM67,257h6v6h-6zM67,277h6v6h-6zM67,297h6v6h-6zM67,317h6v6h-6zM67,57h6v6h-6zM67,77h6v6h-6zM67,357h6v6h-6zM67,377h6v6h-6zM87,117h6v6h-6zM87,137h6v6h-6zM87,157h6v6h-6zM87,177h6v6h-6zM87,197h6v6h-6zM87,237h6v6h-6zM87,257h6v6h-6zM87,277h6v6h-6zM87,297h6v6h-6zM87,317h6v6h-6zM87,57h6v6h-6zM87,77h6v6h-6zM87,357h6v6h-6zM87,377h6v6h-6zM107,117h6v6h-6zM107,137h6v6h-6zM107,157h6v6h-6zM107,177h6v6h-6zM107,197h6v6h-6zM107,237h6v6h-6zM107,257h6v6h-6zM107,277h6v6h-6zM107,297h6v6h-6zM107,317h6v6h-6zM107,57h6v6h-6zM107,77h6v6h-6zM107,357h6v6h-6zM107,377h6v6h-6zM127,117h6v6h-6zM127,137h6v6h-6zM127,157h6v6h-6zM127,177h6v6h-6zM127,197h6v6h-6zM127,237h6v6h-6zM127,257h6v6h-6zM127,277h6v6h-6zM127,297h6v6h-6zM127,317h6v6h-6zM127,57h6v6h-6zM127,77h6v6h-6zM127,357h6v6h-6zM127,377h6v6h-6zM147,117h6v6h-6zM147,137h6v6h-6zM147,157h6v6h-6zM147,177h6v6h-6zM147,197h6v6h-6zM147,237h6v6h-6zM147,257h6v6h-6zM147,277h6v6h-6zM147,297h6v6h-6zM147,317h6v6h-6zM147,57h6v6h-6zM147,77h6v6h-6zM147,357h6v6h-6zM147,377h6v6h-6zM167,117h6v6h-6zM167,137h6v6h-6zM167,157h6v6h-6zM167,177h6v6h-6zM167,197h6v6h-6zM167,237h6v6h-6zM167,257h6v6h-6zM167,277h6v6h-6zM167,297h6v6h-6zM167,317h6v6h-6zM167,57h6v6h-6zM167,77h6v6h-6zM167,357h6v6h-6zM167,377h6v6h-6zM187,117h6v6h-6zM187,137h6v6h-6zM187,157h6v6h-6zM187,177h6v6h-6zM187,197h6v6h-6zM187,237h6v6h-6zM187,257h6v6h-6zM187,277h6v6h-6zM187,297h6v6h-6zM187,317h6v6h-6zM187,57h6v6h-6zM187,77h6v6h-6zM187,357h6v6h-6zM187,377h6v6h-6zM207,117h6v6h-6zM207,137h6v6h-6zM207,157h6v6h-6zM207,177h6v6h-6zM207,197h6v6h-6zM207,237h6v6h-6zM207,257h6v6h-6zM207,277h6v6h-6zM207,297h6v6h-6zM207,317h6v6h-6zM207,57h6v6h-6zM207,77h6v6h-6zM207,357h6v6h-6zM207,377h6v6h-6zM227,117h6v6h-6zM227,137h6v6h-6zM227,157h6v6h-6zM227,177h6v6h-6zM227,197h6v6h-6zM227,237h6v6h-6zM227,257h6v6h-6zM227,277h6v6h-6zM227,297h6v6h-6zM227,317h6v6h-6zM227,57h6v6h-6zM227,77h6v6h-6zM227,357h6v6h-6zM227,377h6v6h-6zM247,117h6v6h-6zM247,137h6v6h-6zM247,157h6v6h-6zM247,177h6v6h-6zM247,197h6v6h-6zM247,237h6v6h-6zM247,257h6v6h-6zM247,277h6v6h-6zM247,297h6v6h-6zM247,317h6v6h-6zM247,57h6v6h-6zM247,77h6v6h-6zM247,357h6v6h-6zM247,377h6v6h-6zM267,117h6v6h-6zM267,137h6v6h-6zM267,157h6v6h-6zM267,177h6v6h-6zM267,197h6v6h-6zM267,237h6v6h-6zM267,257h6v6h-6zM267,277h6v6h-6zM267,297h6v6h-6zM267,317h6v6h-6zM267,57h6v6h-6zM267,77h6v6h-6zM267,357h6v6h-6zM267,377h6v6h-6zM287,117h6v6h-6zM287,137h6v6h-6zM287,157h6v6h-6zM287,177h6v6h-6zM287,197h6v6h-6zM287,237h6v6h-6zM287,257h6v6h-6zM287,277h6v6h-6zM287,297h6v6h-6zM287,317h6v6h-6zM287,57h6v6h-6zM287,77h6v6h-6zM287,357h6v6h-6zM287,377h6v6h-6zM307,117h6v6h-6zM307,137h6v6h-6zM307,157h6v6h-6zM307,177h6v6h-6zM307,197h6v6h-6zM307,237h6v6h-6zM307,257h6v6h-6zM307,277h6v6h-6zM307,297h6v6h-6zM307,317h6v6h-6zM307,57h6v6h-6zM307,77h6v6h-6zM307,357h6v6h-6zM307,377h6v6h-6zM327,117h6v6h-6zM327,137h6v6h-6zM327,157h6v6h-6zM327,177h6v6h-6zM327,197h6v6h-6zM327,237h6v6h-6zM327,257h6v6h-6zM327,277h6v6h-6zM327,297h6v6h-6zM327,317h6v6h-6zM327,57h6v6h-6zM327,77h6v6h-6zM327,357h6v6h-6zM327,377h6v6h-6zM347,117h6v6h-6zM347,137h6v6h-6zM347,157h6v6h-6zM347,177h6v6h-6zM347,197h6v6h-6zM347,237h6v6h-6zM347,257h6v6h-6zM347,277h6v6h-6zM347,297h6v6h-6zM347,317h6v6h-6zM347,57h6v6h-6zM347,77h6v6h-6zM347,357h6v6h-6zM347,377h6v6h-6zM367,117h6v6h-6zM367,137h6v6h-6zM367,157h6v6h-6zM367,177h6v6h-6zM367,197h6v6h-6zM367,237h6v6h-6zM367,257h6v6h-6zM367,277h6v6h-6zM367,297h6v6h-6zM367,317h6v6h-6zM367,57h6v6h-6zM367,77h6v6h-6zM367,357h6v6h-6zM367,377h6v6h-6zM387,117h6v6h-6zM387,137h6v6h-6zM387,157h6v6h-6zM387,177h6v6h-6zM387,197h6v6h-6zM387,237h6v6h-6zM387,257h6v6h-6zM387,277h6v6h-6zM387,297h6v6h-6zM387,317h6v6h-6zM387,57h6v6h-6zM387,77h6v6h-6zM387,357h6v6h-6zM387,377h6v6h-6zM407,117h6v6h-6zM407,137h6v6h-6zM407,157h6v6h-6zM407,177h6v6h-6zM407,197h6v6h-6zM407,237h6v6h-6zM407,257h6v6h-6zM407,277h6v6h-6zM407,297h6v6h-6zM407,317h6v6h-6zM407,57h6v6h-6zM407,77h6v6h-6zM407,357h6v6h-6zM407,377h6v6h-6zM427,117h6v6h-6zM427,137h6v6h-6zM427,157h6v6h-6zM427,177h6v6h-6zM427,197h6v6h-6zM427,237h6v6h-6zM427,257h6v6h-6zM427,277h6v6h-6zM427,297h6v6h-6zM427,317h6v6h-6zM427,57h6v6h-6zM427,77h6v6h-6zM427,357h6v6h-6zM427,377h6v6h-6zM447,117h6v6h-6zM447,137h6v6h-6zM447,157h6v6h-6zM447,177h6v6h-6zM447,197h6v6h-6zM447,237h6v6h-6zM447,257h6v6h-6zM447,277h6v6h-6zM447,297h6v6h-6zM447,317h6v6h-6zM447,57h6v6h-6zM447,77h6v6h-6zM447,357h6v6h-6zM447,377h6v6h-6zM467,117h6v6h-6zM467,137h6v6h-6zM467,157h6v6h-6zM467,177h6v6h-6zM467,197h6v6h-6zM467,237h6v6h-6zM467,257h6v6h-6zM467,277h6v6h-6zM467,297h6v6h-6zM467,317h6v6h-6zM467,57h6v6h-6zM467,77h6v6h-6zM467,357h6v6h-6zM467,377h6v6h-6zM487,117h6v6h-6zM487,137h6v6h-6zM487,157h6v6h-6zM487,177h6v6h-6zM487,197h6v6h-6zM487,237h6v6h-6zM487,257h6v6h-6zM487,277h6v6h-6zM487,297h6v6h-6zM487,317h6v6h-6zM487,57h6v6h-6zM487,77h6v6h-6zM487,357h6v6h-6zM487,377h6v6h-6zM507,117h6v6h-6zM507,137h6v6h-6zM507,157h6v6h-6zM507,177h6v6h-6zM507,197h6v6h-6zM507,237h6v6h-6zM507,257h6v6h-6zM507,277h6v6h-6zM507,297h6v6h-6zM507,317h6v6h-6zM507,57h6v6h-6zM507,77h6v6h-6zM507,357h6v6h-6zM507,377h6v6h-6zM527,117h6v6h-6zM527,137h6v6h-6zM527,157h6v6h-6zM527,177h6v6h-6zM527,197h6v6h-6zM527,237h6v6h-6zM527,257h6v6h-6zM527,277h6v6h-6zM527,297h6v6h-6zM527,317h6v6h-6zM527,57h6v6h-6zM527,77h6v6h-6zM527,357h6v6h-6zM527,377h6v6h-6zM547,117h6v6h-6zM547,137h6v6h-6zM547,157h6v6h-6zM547,177h6v6h-6zM547,197h6v6h-6zM547,237h6v6h-6zM547,257h6v6h-6zM547,277h6v6h-6zM547,297h6v6h-6zM547,317h6v6h-6zM547,57h6v6h-6zM547,77h6v6h-6zM547,357h6v6h-6zM547,377h6v6h-6zM567,117h6v6h-6zM567,137h6v6h-6zM567,157h6v6h-6zM567,177h6v6h-6zM567,197h6v6h-6zM567,237h6v6h-6zM567,257h6v6h-6zM567,277h6v6h-6zM567,297h6v6h-6zM567,317h6v6h-6zM567,57h6v6h-6zM567,77h6v6h-6zM567,357h6v6h-6zM567,377h6v6h-6zM587,117h6v6h-6zM587,137h6v6h-6zM587,157h6v6h-6zM587,177h6v6h-6zM587,197h6v6h-6zM587,237h6v6h-6zM587,257h6v6h-6zM587,277h6v6h-6zM587,297h6v6h-6zM587,317h6v6h-6zM587,57h6v6h-6zM587,77h6v6h-6zM587,357h6v6h-6zM587,377h6v6h-6zM607,117h6v6h-6zM607,137h6v6h-6zM607,157h6v6h-6zM607,177h6v6h-6zM607,197h6v6h-6zM607,237h6v6h-6zM607,257h6v6h-6zM607,277h6v6h-6zM607,297h6v6h-6zM607,317h6v6h-6zM607,57h6v6h-6zM607,77h6v6h-6zM607,357h6v6h-6zM607,377h6v6h-6zM627,117h6v6h-6zM627,137h6v6h-6zM627,157h6v6h-6zM627,177h6v6h-6zM627,197h6v6h-6zM627,237h6v6h-6zM627,257h6v6h-6zM627,277h6v6h-6zM627,297h6v6h-6zM627,317h6v6h-6zM627,57h6v6h-6zM627,77h6v6h-6zM627,357h6v6h-6zM627,377h6v6h-6zM647,117h6v6h-6zM647,137h6v6h-6zM647,157h6v6h-6zM647,177h6v6h-6zM647,197h6v6h-6zM647,237h6v6h-6zM647,257h6v6h-6zM647,277h6v6h-6zM647,297h6v6h-6zM647,317h6v6h-6zM647,57h6v6h-6zM647,77h6v6h-6zM647,357h6v6h-6zM647,377h6v6h-6z" fill="#a8a699"/>
+<text class="idx" x="50" y="124" text-anchor="middle">a</text>
+<text class="idx" x="50" y="144" text-anchor="middle">b</text>
+<text class="idx" x="50" y="164" text-anchor="middle">c</text>
+<text class="idx" x="50" y="184" text-anchor="middle">d</text>
+<text class="idx" x="50" y="204" text-anchor="middle">e</text>
+<text class="idx" x="50" y="244" text-anchor="middle">f</text>
+<text class="idx" x="50" y="264" text-anchor="middle">g</text>
+<text class="idx" x="50" y="284" text-anchor="middle">h</text>
+<text class="idx" x="50" y="304" text-anchor="middle">i</text>
+<text class="idx" x="50" y="324" text-anchor="middle">j</text>
+<text class="idx" x="70" y="106" text-anchor="middle">1</text>
+<text class="idx" x="70" y="342" text-anchor="middle">1</text>
+<text class="idx" x="150" y="106" text-anchor="middle">5</text>
+<text class="idx" x="150" y="342" text-anchor="middle">5</text>
+<text class="idx" x="250" y="106" text-anchor="middle">10</text>
+<text class="idx" x="250" y="342" text-anchor="middle">10</text>
+<text class="idx" x="350" y="106" text-anchor="middle">15</text>
+<text class="idx" x="350" y="342" text-anchor="middle">15</text>
+<text class="idx" x="450" y="106" text-anchor="middle">20</text>
+<text class="idx" x="450" y="342" text-anchor="middle">20</text>
+<text class="idx" x="550" y="106" text-anchor="middle">25</text>
+<text class="idx" x="550" y="342" text-anchor="middle">25</text>
+<text class="idx" x="650" y="106" text-anchor="middle">30</text>
+<text class="idx" x="650" y="342" text-anchor="middle">30</text>
+<rect x="76" y="148" width="408" height="144" rx="6" fill="#1f6b3a"/>
+<rect x="60" y="198" width="26" height="44" rx="4" fill="#c8cbd0" stroke="#8b9097"/>
+<text x="280" y="216" text-anchor="middle" style="fill:#e8f2ea;font-weight:700;font-size:14px">Raspberry Pi Pico</text>
+<text x="280" y="232" text-anchor="middle" style="fill:#bfe0c8;font-size:10px">USB ←</text>
+<circle cx="90" cy="160" r="3.4" fill="#ffd34d"/>
+<text class="pu" x="90" y="176" text-anchor="middle">VBUS</text>
+<circle cx="110" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="110" y="186" text-anchor="middle">VSYS</text>
+<circle cx="130" cy="160" r="3.4" fill="#ffd34d"/>
+<text class="pu" x="130" y="176" text-anchor="middle">GND</text>
+<circle cx="150" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="150" y="186" text-anchor="middle">3V3_EN</text>
+<circle cx="170" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="170" y="176" text-anchor="middle">3V3</text>
+<circle cx="190" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="190" y="186" text-anchor="middle">VREF</text>
+<circle cx="210" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="210" y="176" text-anchor="middle">GP28</text>
+<circle cx="230" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="230" y="186" text-anchor="middle">GND</text>
+<circle cx="250" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="250" y="176" text-anchor="middle">GP27</text>
+<circle cx="270" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="270" y="186" text-anchor="middle">GP26</text>
+<circle cx="290" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="290" y="176" text-anchor="middle">RUN</text>
+<circle cx="310" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="310" y="186" text-anchor="middle">GP22</text>
+<circle cx="330" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="330" y="176" text-anchor="middle">GND</text>
+<circle cx="350" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="350" y="186" text-anchor="middle">GP21</text>
+<circle cx="370" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="370" y="176" text-anchor="middle">GP20</text>
+<circle cx="390" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="390" y="186" text-anchor="middle">GP19</text>
+<circle cx="410" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="410" y="176" text-anchor="middle">GP18</text>
+<circle cx="430" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="430" y="186" text-anchor="middle">GND</text>
+<circle cx="450" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="450" y="176" text-anchor="middle">GP17</text>
+<circle cx="470" cy="160" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="470" y="186" text-anchor="middle">GP16</text>
+<circle cx="90" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="90" y="268" text-anchor="middle">GP0</text>
+<circle cx="110" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="110" y="258" text-anchor="middle">GP1</text>
+<circle cx="130" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="130" y="268" text-anchor="middle">GND</text>
+<circle cx="150" cy="280" r="3.4" fill="#ffd34d"/>
+<text class="pu" x="150" y="258" text-anchor="middle">GP2</text>
+<circle cx="170" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="170" y="268" text-anchor="middle">GP3</text>
+<circle cx="190" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="190" y="258" text-anchor="middle">GP4</text>
+<circle cx="210" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="210" y="268" text-anchor="middle">GP5</text>
+<circle cx="230" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="230" y="258" text-anchor="middle">GND</text>
+<circle cx="250" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="250" y="268" text-anchor="middle">GP6</text>
+<circle cx="270" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="270" y="258" text-anchor="middle">GP7</text>
+<circle cx="290" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="290" y="268" text-anchor="middle">GP8</text>
+<circle cx="310" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="310" y="258" text-anchor="middle">GP9</text>
+<circle cx="330" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="330" y="268" text-anchor="middle">GND</text>
+<circle cx="350" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="350" y="258" text-anchor="middle">GP10</text>
+<circle cx="370" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="370" y="268" text-anchor="middle">GP11</text>
+<circle cx="390" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="390" y="258" text-anchor="middle">GP12</text>
+<circle cx="410" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="410" y="268" text-anchor="middle">GP13</text>
+<circle cx="430" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="430" y="258" text-anchor="middle">GND</text>
+<circle cx="450" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="450" y="268" text-anchor="middle">GP14</text>
+<circle cx="470" cy="280" r="3.4" fill="#c9cdd2"/>
+<text class="pl" x="470" y="258" text-anchor="middle">GP15</text>
+<path class="wire" stroke="#d8352a" d="M90,120 L90,60"/>
+<circle cx="90" cy="120" r="3.2" fill="#3a3a36"/>
+<circle cx="90" cy="60" r="3.2" fill="#3a3a36"/>
+<path class="wire" stroke="#1f1f1f" d="M130,120 L130,80"/>
+<circle cx="130" cy="120" r="3.2" fill="#3a3a36"/>
+<circle cx="130" cy="80" r="3.2" fill="#3a3a36"/>
+<path class="wire" stroke="#13a34a" d="M150,320 C150,346 530,346 530,320"/>
+<circle cx="150" cy="320" r="3.2" fill="#3a3a36"/>
+<circle cx="530" cy="320" r="3.2" fill="#3a3a36"/>
+<line x1="530" y1="280" x2="610" y2="280" stroke="#8d8d86" stroke-width="1.8"/>
+<g transform="translate(570.0,280)"><rect x="-18" y="-6" width="36" height="12" rx="5" fill="#e6cf9f" stroke="#9a8358"/><rect x="-11" y="-6" width="3" height="12" fill="#ff8c00"/><rect x="-5" y="-6" width="3" height="12" fill="#ff8c00"/><rect x="1" y="-6" width="3" height="12" fill="#7a4a22"/><rect x="10" y="-6" width="3" height="12" fill="#c9a13b"/></g>
+<circle cx="530" cy="280" r="2.6" fill="#3a3a36"/>
+<circle cx="610" cy="280" r="2.6" fill="#3a3a36"/>
+<text x="570.0" y="264" text-anchor="middle" style="font-size:11px;font-weight:600">330 Ω <tspan style="font-weight:400;fill:#5b625e;font-size:9.5px">orange·orange·brown</tspan></text>
+<line x1="570" y1="60" x2="570" y2="80" stroke="#8d8d86" stroke-width="1.8"/>
+<circle cx="570" cy="70" r="13" fill="#27407a"/><path d="M557.6,74 A13,13 0 0 0 582.4,74 Z" fill="#c9cdd6"/>
+<text x="570" y="80" text-anchor="middle" style="fill:#27407a;font-size:9px;font-weight:700">−</text>
+<text x="552" y="26" text-anchor="middle" style="font-size:11px;font-weight:600">1000 µF</text>
+<text class="m" x="552" y="40" text-anchor="middle" style="font-size:9.5px">stripe (−) to − rail</text>
+<rect x="770" y="110" width="200" height="200" rx="6" fill="#16181a"/>
+<circle cx="789" cy="129" r="7" fill="rgb(255,0,0)"/>
+<circle cx="812" cy="129" r="7" fill="rgb(255,95,0)"/>
+<circle cx="835" cy="129" r="7" fill="rgb(255,191,0)"/>
+<circle cx="858" cy="129" r="7" fill="rgb(223,255,0)"/>
+<circle cx="881" cy="129" r="7" fill="rgb(127,255,0)"/>
+<circle cx="904" cy="129" r="7" fill="rgb(31,255,0)"/>
+<circle cx="927" cy="129" r="7" fill="rgb(0,255,63)"/>
+<circle cx="950" cy="129" r="7" fill="rgb(0,255,159)"/>
+<circle cx="789" cy="152" r="7" fill="rgb(255,95,0)"/>
+<circle cx="812" cy="152" r="7" fill="rgb(255,191,0)"/>
+<circle cx="835" cy="152" r="7" fill="rgb(223,255,0)"/>
+<circle cx="858" cy="152" r="7" fill="rgb(127,255,0)"/>
+<circle cx="881" cy="152" r="7" fill="rgb(31,255,0)"/>
+<circle cx="904" cy="152" r="7" fill="rgb(0,255,63)"/>
+<circle cx="927" cy="152" r="7" fill="rgb(0,255,159)"/>
+<circle cx="950" cy="152" r="7" fill="rgb(0,255,255)"/>
+<circle cx="789" cy="175" r="7" fill="rgb(255,191,0)"/>
+<circle cx="812" cy="175" r="7" fill="rgb(223,255,0)"/>
+<circle cx="835" cy="175" r="7" fill="rgb(127,255,0)"/>
+<circle cx="858" cy="175" r="7" fill="rgb(31,255,0)"/>
+<circle cx="881" cy="175" r="7" fill="rgb(0,255,63)"/>
+<circle cx="904" cy="175" r="7" fill="rgb(0,255,159)"/>
+<circle cx="927" cy="175" r="7" fill="rgb(0,255,255)"/>
+<circle cx="950" cy="175" r="7" fill="rgb(0,159,255)"/>
+<circle cx="789" cy="198" r="7" fill="rgb(223,255,0)"/>
+<circle cx="812" cy="198" r="7" fill="rgb(127,255,0)"/>
+<circle cx="835" cy="198" r="7" fill="rgb(31,255,0)"/>
+<circle cx="858" cy="198" r="7" fill="rgb(0,255,63)"/>
+<circle cx="881" cy="198" r="7" fill="rgb(0,255,159)"/>
+<circle cx="904" cy="198" r="7" fill="rgb(0,255,255)"/>
+<circle cx="927" cy="198" r="7" fill="rgb(0,159,255)"/>
+<circle cx="950" cy="198" r="7" fill="rgb(0,63,255)"/>
+<circle cx="789" cy="221" r="7" fill="rgb(127,255,0)"/>
+<circle cx="812" cy="221" r="7" fill="rgb(31,255,0)"/>
+<circle cx="835" cy="221" r="7" fill="rgb(0,255,63)"/>
+<circle cx="858" cy="221" r="7" fill="rgb(0,255,159)"/>
+<circle cx="881" cy="221" r="7" fill="rgb(0,255,255)"/>
+<circle cx="904" cy="221" r="7" fill="rgb(0,159,255)"/>
+<circle cx="927" cy="221" r="7" fill="rgb(0,63,255)"/>
+<circle cx="950" cy="221" r="7" fill="rgb(31,0,255)"/>
+<circle cx="789" cy="244" r="7" fill="rgb(31,255,0)"/>
+<circle cx="812" cy="244" r="7" fill="rgb(0,255,63)"/>
+<circle cx="835" cy="244" r="7" fill="rgb(0,255,159)"/>
+<circle cx="858" cy="244" r="7" fill="rgb(0,255,255)"/>
+<circle cx="881" cy="244" r="7" fill="rgb(0,159,255)"/>
+<circle cx="904" cy="244" r="7" fill="rgb(0,63,255)"/>
+<circle cx="927" cy="244" r="7" fill="rgb(31,0,255)"/>
+<circle cx="950" cy="244" r="7" fill="rgb(127,0,255)"/>
+<circle cx="789" cy="267" r="7" fill="rgb(0,255,63)"/>
+<circle cx="812" cy="267" r="7" fill="rgb(0,255,159)"/>
+<circle cx="835" cy="267" r="7" fill="rgb(0,255,255)"/>
+<circle cx="858" cy="267" r="7" fill="rgb(0,159,255)"/>
+<circle cx="881" cy="267" r="7" fill="rgb(0,63,255)"/>
+<circle cx="904" cy="267" r="7" fill="rgb(31,0,255)"/>
+<circle cx="927" cy="267" r="7" fill="rgb(127,0,255)"/>
+<circle cx="950" cy="267" r="7" fill="rgb(223,0,255)"/>
+<circle cx="789" cy="290" r="7" fill="rgb(0,255,159)"/>
+<circle cx="812" cy="290" r="7" fill="rgb(0,255,255)"/>
+<circle cx="835" cy="290" r="7" fill="rgb(0,159,255)"/>
+<circle cx="858" cy="290" r="7" fill="rgb(0,63,255)"/>
+<circle cx="881" cy="290" r="7" fill="rgb(31,0,255)"/>
+<circle cx="904" cy="290" r="7" fill="rgb(127,0,255)"/>
+<circle cx="927" cy="290" r="7" fill="rgb(223,0,255)"/>
+<circle cx="950" cy="290" r="7" fill="rgb(255,0,191)"/>
+<text class="t" x="870" y="336" text-anchor="middle">8×8 WS2812B panel</text>
+<text class="m" x="870" y="352" text-anchor="middle">panel input (DIN) lead:</text>
+<text class="m" x="870" y="368" text-anchor="middle">red 5V · green DIN · white GND</text>
+<rect x="736" y="190" width="26" height="44" rx="3" fill="#f4f5f2" stroke="#17191a"/>
+<path class="wire" stroke="#d8352a" d="M630,60 C700,60 680,198 736,198"/>
+<circle cx="630" cy="60" r="3.2" fill="#3a3a36"/>
+<path class="wire" stroke="#f2f2ee" d="M610,80 C670,90 670,226 736,226"/>
+<circle cx="610" cy="80" r="3.2" fill="#3a3a36"/>
+<path class="wire" d="M610,80 C670,90 670,226 736,226" stroke="#9a9a94" style="stroke-width:7" opacity="0.35"/>
+<path class="wire" stroke="#13a34a" d="M610,300 C680,300 680,212 736,212"/>
+<circle cx="610" cy="300" r="3.2" fill="#3a3a36"/>
+<path d="M762,212 L770,212" stroke="#17191a" stroke-width="2"/>
+<line x1="40" y1="428" x2="66" y2="428" stroke="#d8352a" stroke-width="5" stroke-linecap="round"/>
+<text x="76" y="432">VBUS (pin 40) → + rail → panel 5V</text>
+<line x1="410" y1="428" x2="436" y2="428" stroke="#1f1f1f" stroke-width="5" stroke-linecap="round"/>
+<text x="446" y="432">GND (pin 38) → − rail</text>
+<line x1="40" y1="448" x2="66" y2="448" stroke="#f2f2ee" stroke-width="5" stroke-linecap="round"/>
+<line x1="40" y1="448" x2="66" y2="448" stroke="#9a9a94" stroke-width="7" stroke-linecap="round" opacity="0.35"/>
+<text x="76" y="452">− rail → panel GND</text>
+<line x1="410" y1="448" x2="436" y2="448" stroke="#13a34a" stroke-width="5" stroke-linecap="round"/>
+<text x="446" y="452">GP2 (pin 4) → j24, 330 Ω h24–h28, i28 → panel DIN</text>
+</svg>
