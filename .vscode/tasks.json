@@ -1,0 +1,39 @@
+{
+  // Cmd+Shift+B runs the default task: the sign on the Pico.
+  // Terminal > Run Task... lists the rest.
+  // All Pico tasks go through run_on_pico.sh: it boots a board stuck in
+  // BOOTSEL, copies config.py / matrix.py / font.py, then runs the script.
+  // Stop a running script with Ctrl-C in the task's terminal.
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run sign on Pico",
+      "type": "shell",
+      "command": "./run_on_pico.sh sign.py",
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run panel test on Pico",
+      "type": "shell",
+      "command": "./run_on_pico.sh test_matrix.py",
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run current file on Pico",
+      "type": "shell",
+      "command": "./run_on_pico.sh \"${file}\"",
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Preview sign as GIF (no Pico)",
+      "type": "shell",
+      "command": "python3 preview.py && open docs/sign.gif",
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    }
+  ]
+}

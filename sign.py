@@ -10,6 +10,7 @@ frames() only computes colours, with no hardware imports, so preview.py draws
 exactly what the panel will show. main() is the part that needs a Pico.
 """
 
+import config
 from font import text_columns
 
 TEXT = "Paradox Transistor Lab"
@@ -82,9 +83,19 @@ def logo(hold_ms=1500):
 
 
 def scroll(text=TEXT, step_ms=SCROLL_MS):
-    """Text enters from the right and leaves on the left, in a moving rainbow."""
+    """Text slides across in a moving rainbow, entering from config.SCROLL_FROM.
+
+    Only the window's direction of travel changes; the columns are drawn the
+    same way, so the letters stay upright and readable either way. From the
+    left, the end of the text ("Lab") arrives first.
+    """
     strip = [0] * W + text_columns(text) + [0] * W
-    for offset in range(len(strip) - W + 1):
+    last = len(strip) - W
+    if getattr(config, "SCROLL_FROM", "right") == "left":
+        offsets = range(last, -1, -1)
+    else:
+        offsets = range(last + 1)
+    for offset in offsets:
         px = blank()
         for x in range(W):
             col = strip[offset + x]

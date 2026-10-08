@@ -1,0 +1,10 @@
+{
+  // These files run on the Pico. `machine` and `neopixel` ship inside the
+  // MicroPython firmware, so Pylance can't resolve them on the Mac and its
+  // warnings about them are noise.
+  "python.analysis.extraPaths": ["${workspaceFolder}"],
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "none",
+    "reportMissingModuleSource": "none"
+  }
+}

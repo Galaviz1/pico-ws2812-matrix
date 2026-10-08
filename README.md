@@ -119,6 +119,22 @@ example from a USB power bank. **Not on a Pico with a stuck BOOTSEL button:**
 that board boots into the bootloader on power-up and needs
 `~/pico-oled/start.sh` from the computer every time.
 
+## Edit in VS Code
+
+Open the folder in VS Code. The Run button would run these files on the Mac,
+where `machine` and `neopixel` don't exist, so use the tasks instead:
+
+| Task | How |
+|---|---|
+| Run the sign on the Pico | **Cmd+Shift+B** (default build task) |
+| Run the panel test | Terminal → Run Task… → *Run panel test on Pico* |
+| Run whichever file is open | Terminal → Run Task… → *Run current file on Pico* |
+| Preview the animation on the Mac | Terminal → Run Task… → *Preview sign as GIF (no Pico)* |
+
+Each Pico task boots the board if needed and copies `config.py`, `matrix.py`
+and `font.py` first, so edits to those take effect on the next run. Stop a
+running script with Ctrl-C in its terminal before starting another.
+
 ## Change the sign
 
 All in `sign.py` unless noted:
@@ -127,6 +143,7 @@ All in `sign.py` unless noted:
 |---|---|
 | The text | `TEXT = "Paradox Transistor Lab"` |
 | Scroll speed | `SCROLL_MS` (ms per column; smaller is faster) |
+| Scroll direction | `SCROLL_FROM` in `config.py`: `"right"` (normal reading order) or `"left"` |
 | Text colours | `scroll()` — the rainbow comes from `hsv()`; use a fixed `(r, g, b)` for one colour |
 | The logo | `LOGO`, 8 strings of `R` (red), `W` (white), `.` (off) |
 | Order of the parts | `frames()` |
@@ -142,7 +159,7 @@ it on the panel.
 |---|---|---|
 | Nothing lights | Data into the DOUT end, no shared GND, or wrong GPIO | Use the input end; join the grounds; check `DATA_PIN` |
 | First LED wrong colour or flickering | 3.3 V data marginal, or no series resistor | 330 Ω at the panel; shorter data wire; 74AHCT125 |
-| Image mirrored or rotated | Panel held a different way than assumed | `FLIP_X`, `FLIP_Y`, `TRANSPOSE` in `config.py`, then `test_matrix.py` |
+| Image mirrored, upside down or rotated | Panel held a different way than assumed | Run `test_matrix.py` and note which colour lands in the top-left and top-right corners; set `FLIP_X`, `FLIP_Y`, `TRANSPOSE` until red is top-left and green top-right. The YouTube logo is symmetric top to bottom, so it can't show an upside-down panel; the corners can |
 | Red and green swapped | Not a GRB WS2812B | Swap the first two values in `Matrix.show()` |
 | Pico resets when the panel gets bright | USB supply sagging | Lower `MAX_MA`, or move the panel to a separate 5 V supply |
 | `ModuleNotFoundError: No module named 'machine'` | Ran the file on the computer | Use `./run_on_pico.sh`; only `preview.py` runs on the computer |
