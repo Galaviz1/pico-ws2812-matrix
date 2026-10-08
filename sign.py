@@ -2,7 +2,7 @@
 
 Loop: a rainbow wipe, the play-button logo fading in, then the logo sliding
 out to the left with the channel name right behind it, in a rainbow, as one
-continuous ticker.
+continuous ticker, and finally the channel's tree icon scanning in.
 
     ./run_on_pico.sh sign.py          run it (Ctrl-C stops and blanks the panel)
     python3 preview.py                render the same frames to docs/sign.gif
@@ -37,6 +37,24 @@ LOGO = [
     ".RRRRRR.",
     "........",
 ]
+
+
+# Channel icon: a minimalist tree, drawn in mint green with a CRT scan-line
+# look (alternate rows brighter and dimmer). '#' lit, '.' off. Original
+# artwork for the channel; the style nods to 80s scan-line logos.
+TREE = [
+    "..####..",
+    ".######.",
+    "########",
+    "########",
+    ".######.",
+    "...##...",
+    "..####..",
+    "########",
+]
+MINT = (40, 230, 140)
+TREE_HOLD_STEPS = 24      # x TREE_STEP_MS: how long the tree shimmers (~3 s)
+TREE_STEP_MS = 120
 
 
 def hsv(h, s=1.0, v=1.0):
@@ -127,6 +145,34 @@ def scroll(text=TEXT, step_ms=SCROLL_MS):
         yield px, step_ms
 
 
+def tree_frame(rows_shown=8, phase=0, level=1.0):
+    """The tree with only its bottom `rows_shown` rows, scan-line shaded.
+
+    Rows alternate full and ~55 % brightness; `phase` swaps which rows are
+    bright, so stepping it makes the stripes shimmer.
+    """
+    px = blank()
+    for y in range(H):
+        if y < H - rows_shown:
+            continue
+        shade = level * (1.0 if (y + phase) % 2 == 0 else 0.55)
+        colour = (int(MINT[0] * shade), int(MINT[1] * shade), int(MINT[2] * shade))
+        for x in range(W):
+            if TREE[y][x] == "#":
+                px[y * W + x] = colour
+    return px
+
+
+def tree():
+    """Scan in from the ground up, shimmer, fade out."""
+    for rows in range(1, H + 1):
+        yield tree_frame(rows), 70
+    for step in range(TREE_HOLD_STEPS):
+        yield tree_frame(phase=step % 2), TREE_STEP_MS
+    for i in range(9, -1, -1):
+        yield tree_frame(level=i / 10), 40
+
+
 def frames():
     """One full cycle: rainbow wipe, logo fades in and holds, then the ticker."""
     yield from wipe()
@@ -134,6 +180,7 @@ def frames():
         yield logo_frame(i / 10), 40
     yield logo_frame(), LOGO_HOLD_MS
     yield from scroll()
+    yield from tree()
 
 
 def main():

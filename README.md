@@ -3,12 +3,13 @@
 An 8×8 WS2812B RGB LED panel driven by a Raspberry Pi Pico in MicroPython,
 starting with a sign for the YouTube channel **Paradox Transistor Lab**: a
 rainbow wipe, the play-button logo, then the logo sliding out to the left with
-the channel name right behind it in a rainbow, as one continuous ticker.
+the channel name right behind it in a rainbow, as one continuous ticker, and
+finally the channel's tree icon scanning in, in mint green.
 
 ![The sign: rainbow wipe, YouTube logo, "Paradox Transistor Lab" scrolling](docs/sign.gif)
 
 *Rendered on a computer by `preview.py` from the same code the Pico runs, so
-this is exactly what the panel shows (one 12 s cycle).*
+this is exactly what the panel shows (one 14 s cycle).*
 
 ## Hardware
 
@@ -150,6 +151,7 @@ All in `sign.py` unless noted:
 | Scroll direction | `SCROLL_FROM` in `config.py`: `"right"` (normal reading order) or `"left"` |
 | Text colours | `scroll()` — the rainbow comes from `hsv()`; use a fixed `(r, g, b)` for one colour |
 | The logo | `LOGO`, 8 strings of `R` (red), `W` (white), `.` (off) |
+| The tree icon | `TREE` (`#` lit), colour `MINT`, shimmer length `TREE_HOLD_STEPS` |
 | Order of the parts | `frames()` |
 | Gap between logo and text, logo hold time | `LOGO_GAP`, `LOGO_HOLD_MS` |
 | Brightness, current limit | `config.py` |
