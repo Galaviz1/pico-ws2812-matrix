@@ -21,14 +21,16 @@ RED = (255, 0, 0)
 WHITE = (255, 255, 255)
 OFF = (0, 0, 0)
 
-# YouTube play button: red rounded body, white triangle. 'R' red, 'W' white.
+# Play button: red rounded body, white triangle pointing LEFT (chosen on the
+# bench, 2026-10-08). 'R' red, 'W' white. For a right-pointing triangle, move
+# the single 'W' in rows 2 and 5 one column left of the 'WW' pair.
 LOGO = [
     "........",
     ".RRRRRR.",
-    "RRRWRRRR",
+    "RRRRWRRR",
     "RRRWWRRR",
     "RRRWWRRR",
-    "RRRWRRRR",
+    "RRRRWRRR",
     ".RRRRRR.",
     "........",
 ]
