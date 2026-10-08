@@ -17,13 +17,13 @@ this is exactly what the panel shows (one 12 s cycle).*
 | Raspberry Pi Pico (RP2040) | Running MicroPython (v1.29 tested on this bench). A Pico W or Pico 2 works the same |
 | [BTF-LIGHTING WS2812B ECO 8×8 panel](https://www.amazon.com.mx/dp/B09XWQTZZN) | 64 addressable RGB LEDs, 5 V, flexible board, 3-wire input: 5V / DIN / GND |
 | 330 Ω resistor | In series with the data line, at the panel end. Protects the first LED from ringing |
-| 1000 µF capacitor, 6.3 V or more | Across the panel's 5V and GND. Absorbs the inrush when LEDs switch on |
+| 220 µF electrolytic capacitor, 10 V or more | Across the panel's 5V and GND. Smooths the current steps as LEDs switch, and is small enough not to cause a big surge on USB at plug-in. 100 µF also works. Use 1000 µF only with a separate 5 V supply |
 | Jumper wires | |
 | *Optional:* 5 V supply, 2–4 A | Only for more brightness than USB allows (see Power) |
 
 ## Wiring
 
-![Wiring diagram: GP2 through 330 Ω to DIN, VBUS to 5V, GND to GND, 1000 µF across 5V and GND](docs/wiring.svg)
+![Wiring diagram: GP2 through 330 Ω to DIN, VBUS to 5V, GND to GND, 220 µF across 5V and GND](docs/wiring.svg)
 
 | Panel | Pico | Pin |
 |---|---|---|
@@ -33,13 +33,13 @@ this is exactly what the panel shows (one 12 s cycle).*
 
 ### On a breadboard
 
-![Breadboard: Pico across the trench with USB on the left; VBUS and GND to the rails; 1000 µF across the rails; GP2 to a 330 Ω resistor and on to the panel DIN; panel 5V and GND from the rails](docs/breadboard.svg)
+![Breadboard: Pico across the trench with USB on the left; VBUS and GND to the rails; 220 µF across the rails; GP2 to a 330 Ω resistor and on to the panel DIN; panel 5V and GND from the rails](docs/breadboard.svg)
 
 1. **Pico across the centre trench, USB to the left.** Its pins land in rows
    **c** and **h**, which leaves rows a–b and i–j free beside every pin.
 2. **Power to the rails:** red jumper from **a2** (VBUS, pin 40) to the **+**
    rail, black jumper from **a4** (GND, pin 38) to the **−** rail.
-3. **1000 µF capacitor** across the two rails, striped (−) leg in the **−** rail.
+3. **220 µF capacitor** across the two rails, striped (−) leg in the **−** rail.
 4. **Data:** green jumper from **j5** (GP2, pin 4) to **j24**, then the
    **330 Ω** resistor from **h24** to **h28**.
 5. **Panel lead** (input end): **red → + rail**, **white → − rail**,
@@ -67,7 +67,8 @@ can overload the port.
 
 For more brightness, power the panel from a separate 5 V supply instead of
 VBUS: supply 5V → panel 5V, supply GND → panel GND **and** Pico GND. Then
-raise `MAX_MA` in `config.py` to what that supply can deliver.
+raise `MAX_MA` in `config.py` to what that supply can deliver. At those
+currents, use a **1000 µF** capacitor in place of the 220 µF.
 
 ## Files
 
