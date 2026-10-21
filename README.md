@@ -90,7 +90,13 @@ currents, use a **1000 µF** capacitor in place of the 220 µF.
 ## Run it
 
 Needs `mpremote` and `pyserial` on the computer
-(`python3 -m pip install --user mpremote pyserial`).
+(`python3 -m pip install --user mpremote pyserial`). A board with a stuck
+BOOTSEL button is booted from the computer with `~/pico-oled/start.sh`, which
+additionally needs `pyusb` (`python3 -m pip install --user pyusb`) and the
+native `libusb` (`brew install libusb`). Install all of these for the Python you
+actually invoke: if the system Python changes — for example after a Command Line
+Tools update moves `/usr/bin/python3` to a new version — reinstall them for the
+new one, or the boot fails with `No module named 'usb'`.
 
 **1. Test the panel first**
 
@@ -171,6 +177,9 @@ it on the panel.
 | Pico resets when the panel gets bright | USB supply sagging | Lower `MAX_MA`, or move the panel to a separate 5 V supply |
 | A change to `config.py` / `matrix.py` / `font.py` seems to do nothing | The board was still using a copy imported by an earlier run | Run through `run_on_pico.sh`, which clears those modules before every run (older versions didn't) |
 | `ModuleNotFoundError: No module named 'machine'` | Ran the file on the computer | Use `./run_on_pico.sh`; only `preview.py` runs on the computer |
+| `ModuleNotFoundError: No module named 'usb'` while `start.sh` boots the board | `pyusb` is not installed for the Python now in use (e.g. after a Command Line Tools / Python upgrade) | `python3 -m pip install --user pyusb` (needs `libusb`: `brew install libusb`) |
+| `usb.core.USBError: [Errno 32] Pipe error` while booting or flashing over PICOBOOT | The bootloader's USB interface stalled after repeated back-to-back attempts | Physically unplug the Pico, wait a few seconds, replug, then retry — no software reset clears this |
+| The panel blanks the instant the computer detaches | A detached `run` sends the script a KeyboardInterrupt, which triggers the sign's cleanup (`m.clear()`) | To run without the computer attached, `./run_on_pico.sh --install sign.py`, then soft-reset the board (Ctrl-D at the REPL, or `machine.soft_reset()`). A soft reset runs `main.py` and, unlike power-up, does not re-enter the stuck bootloader. Note that checking a running sign with any tool that sends Ctrl-C (including `pico_port.py`) also stops it |
 
 ## License
 
