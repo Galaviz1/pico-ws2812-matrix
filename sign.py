@@ -15,9 +15,9 @@ exactly what the panel will show. main() is the part that needs a Pico.
 """
 
 import config
-from font import text_columns
+from font import glyph_columns
 
-TEXT = "Paradox Transistor Lab"
+TEXT = "@ParadoxTransistor Lab"
 SCROLL_MS = 55            # per 1-column step: ~18 columns per second
 LOGO_GAP = 2              # blank columns between the logo and the first letter
 LOGO_HOLD_MS = 1500       # how long the logo stays still before sliding out
@@ -25,6 +25,7 @@ W = config.WIDTH          # 8 for one panel, 16 for two side by side
 H = config.HEIGHT
 
 RED = (255, 0, 0)
+GREEN = (0, 255, 0)
 WHITE = (255, 255, 255)
 OFF = (0, 0, 0)
 
@@ -59,6 +60,13 @@ TREE = [
 MINT = (40, 230, 140)
 TREE_HOLD_STEPS = 24      # x TREE_STEP_MS: how long the tree shimmers (~3 s)
 TREE_STEP_MS = 120
+
+# The Matrix digital rain shown after the tree. RAIN_DENSITY is the dial:
+# drops falling per column at once (higher = denser rain). RAIN_TAIL is how
+# many fading cells trail each bright head.
+RAIN_DENSITY = 2
+RAIN_TAIL = 4
+RAIN_STEPS = 150          # ~10.5 s of rain before it fades out
 
 
 def hsv(h, s=1.0, v=1.0):
@@ -120,11 +128,15 @@ def _logo_columns():
 
 
 def _text_columns(text):
-    """The text as coloured columns, each column a rainbow step along the text."""
+    """The text as coloured columns: green, with the final word "Lab" in red."""
+    red_start = len(text) - 3        # colour the last three glyphs ("Lab") red
     cols = []
-    for i, mask in enumerate(text_columns(text)):
-        colour = hsv((i / 40.0) % 1.0)
-        cols.append([colour if mask >> y & 1 else OFF for y in range(H)])
+    for i, ch in enumerate(text):
+        if i:
+            cols.append([OFF] * H)   # one blank column between glyphs (font gap=1)
+        colour = RED if i >= red_start else GREEN
+        for mask in glyph_columns(ch):
+            cols.append([colour if mask >> y & 1 else OFF for y in range(H)])
     return cols
 
 
@@ -186,14 +198,49 @@ def tree():
         yield tree_frame(level=i / 10), 40
 
 
+def matrix_rain(steps=RAIN_STEPS, tail=RAIN_TAIL, density=RAIN_DENSITY):
+    """The Matrix: green digital rain — falling code streaks, then fade out.
+
+    Each column runs `density` drops at once; a drop is a bright head with
+    `tail` fading cells behind it. Raise RAIN_DENSITY / RAIN_TAIL for heavier
+    rain. A dimmer head is never allowed to paint over a brighter one.
+    """
+    import random
+    heads = [[random.randint(-H, 0) for _ in range(density)] for _ in range(W)]
+    speeds = [random.choice((1, 1, 2)) for _ in range(W)]
+    px = blank()
+    for _ in range(steps):
+        px = blank()
+        for x in range(W):
+            for d in range(density):
+                for k in range(tail + 1):
+                    y = heads[x][d] - k
+                    if 0 <= y < H:
+                        g = 255 if k == 0 else int(200 * (tail + 1 - k) / (tail + 1))
+                        r = 120 if k == 0 else 0
+                        b = 140 if k == 0 else int(60 * (tail + 1 - k) / (tail + 1))
+                        if g > px[y * W + x][1]:          # keep the brighter cell
+                            px[y * W + x] = (r, g, b)
+                heads[x][d] += speeds[x]
+                if heads[x][d] - tail > H:
+                    heads[x][d] = random.randint(-H, -1)
+            if random.random() < 0.08:
+                speeds[x] = random.choice((1, 1, 2))
+        yield px, 70
+    for i in range(9, -1, -1):                            # fade the rain out
+        f = i / 10
+        yield [(int(r * f), int(g * f), int(b * f)) for r, g, b in px], 50
+
+
 def frames():
-    """One full cycle: rainbow wipe, logo fades in and holds, then the ticker."""
+    """One full cycle: wipe, logo, ticker, tree, then the Matrix rain."""
     yield from wipe()
     for i in range(1, 11):
         yield logo_frame(i / 10), 40
     yield logo_frame(), LOGO_HOLD_MS
     yield from scroll()
     yield from tree()
+    yield from matrix_rain()
 
 
 def main():
