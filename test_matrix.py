@@ -1,14 +1,21 @@
-"""Bring-up test for the 8x8 panel. Run this before anything else.
+"""Bring-up test for the display. Run this before anything else.
 
     ./run_on_pico.sh test_matrix.py
 
+Works for one 8x8 panel or two chained side by side (16x8) — it uses the size
+and tiling from config.py.
+
 1. Chain order: lights the LEDs one at a time in the order the data reaches
-   them (raw index 0..63, no mapping). Watch where #0 is and which way the
-   chain snakes.
-2. Corners, through the mapping in config.py:
+   them (raw index 0..n-1, no mapping). Watch where #0 is and which way the
+   chain snakes. With two panels, note which physical panel lights FIRST and
+   which lights SECOND — that is the chain order. If the right panel lights
+   first, swap the two rows in config.PANELS.
+2. Corners, through the mapping in config.py — on the WHOLE display:
        top-left RED     top-right GREEN
        bottom-left BLUE bottom-right WHITE
-   If they land elsewhere, adjust FLIP_X / FLIP_Y / TRANSPOSE / SERPENTINE.
+   If they land elsewhere on a single panel, adjust FLIP_X / FLIP_Y /
+   TRANSPOSE / SERPENTINE. If one panel is correct but the other is
+   upside-down/mirrored, set that panel's rotate180 to True in config.PANELS.
 3. Colour order: the whole panel red, then green, then blue. If red shows
    as green, the panel isn't the usual GRB WS2812B.
 4. A diagonal: should run from top-left to bottom-right.

@@ -32,18 +32,33 @@ class Matrix:
         self.np = neopixel.NeoPixel(machine.Pin(pin), self.n)
         self.fb = [(0, 0, 0)] * self.n          # logical, row-major: y * width + x
         self.last_ma = 0                         # estimate for the last frame shown
+        # Panel tiling: map each grid cell -> (chain position, rotated 180?).
+        # Falls back to a single full-size panel for older configs.
+        panels = getattr(config, "PANELS", [(0, 0, False)])
+        self._pw = getattr(config, "PANEL_W", width)
+        self._ph = getattr(config, "PANEL_H", height)
+        self._panels = {(gc, gr): (k, rot) for k, (gc, gr, rot) in enumerate(panels)}
 
     def index(self, x, y):
-        """Chain position of the LED at panel (x, y)."""
+        """Chain position of the LED at display (x, y), across tiled panels."""
+        pw, ph = self._pw, self._ph
+        k, rot = self._panels.get((x // pw, y // ph), (0, False))
+        lx, ly = x % pw, y % ph
+        if rot:                                  # panel mounted turned 180
+            lx, ly = pw - 1 - lx, ph - 1 - ly
+        return k * pw * ph + self._panel_index(lx, ly, pw, ph)
+
+    def _panel_index(self, x, y, w, h):
+        """Chain position within one panel: its internal snake/flip mapping."""
         if config.FLIP_X:
-            x = self.width - 1 - x
+            x = w - 1 - x
         if config.FLIP_Y:
-            y = self.height - 1 - y
+            y = h - 1 - y
         if config.TRANSPOSE:
             x, y = y, x
         if config.SERPENTINE and (y & 1):
-            x = self.width - 1 - x
-        return y * self.width + x
+            x = w - 1 - x
+        return y * w + x
 
     def set(self, x, y, rgb):
         if 0 <= x < self.width and 0 <= y < self.height:

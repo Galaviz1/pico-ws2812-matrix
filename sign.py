@@ -1,4 +1,7 @@
-"""Channel sign for an 8x8 WS2812B panel: Paradox Transistor Lab.
+"""Channel sign for a WS2812B display: Paradox Transistor Lab.
+
+Sized from config (one 8x8 panel, or two chained side by side as 16x8). The
+8x8 logo and tree are drawn centred on whatever width the display is.
 
 Loop: a rainbow wipe, the play-button logo fading in, then the logo sliding
 out to the left with the channel name right behind it, in a rainbow, as one
@@ -18,7 +21,8 @@ TEXT = "Paradox Transistor Lab"
 SCROLL_MS = 55            # per 1-column step: ~18 columns per second
 LOGO_GAP = 2              # blank columns between the logo and the first letter
 LOGO_HOLD_MS = 1500       # how long the logo stays still before sliding out
-W = H = 8
+W = config.WIDTH          # 8 for one panel, 16 for two side by side
+H = config.HEIGHT
 
 RED = (255, 0, 0)
 WHITE = (255, 255, 255)
@@ -71,11 +75,17 @@ def blank():
 
 
 def logo_frame(level=1.0):
-    px = []
-    for row in LOGO:
-        for ch in row:
-            c = RED if ch == "R" else WHITE if ch == "W" else OFF
-            px.append((int(c[0] * level), int(c[1] * level), int(c[2] * level)))
+    px = blank()
+    xoff = (W - len(LOGO[0])) // 2        # centre the 8-wide logo on the display
+    for yy, row in enumerate(LOGO):
+        for xx, ch in enumerate(row):
+            if ch == "R":
+                c = RED
+            elif ch == "W":
+                c = WHITE
+            else:
+                continue
+            px[yy * W + xoff + xx] = (int(c[0] * level), int(c[1] * level), int(c[2] * level))
     return px
 
 
@@ -98,11 +108,11 @@ def wipe():
 
 
 def _logo_columns():
-    """The logo as a list of 8 columns, each a list of 8 colours (top to bottom)."""
+    """The logo as columns, each a list of colours top to bottom (its own size)."""
     cols = []
-    for x in range(W):
+    for x in range(len(LOGO[0])):
         col = []
-        for y in range(H):
+        for y in range(len(LOGO)):
             ch = LOGO[y][x]
             col.append(RED if ch == "R" else WHITE if ch == "W" else OFF)
         cols.append(col)
@@ -128,13 +138,15 @@ def scroll(text=TEXT, step_ms=SCROLL_MS):
     blank_col = [OFF] * H
     logo, words = _logo_columns(), _text_columns(text)
     gap = [blank_col] * LOGO_GAP
+    xoff = (W - len(logo)) // 2           # so the ticker starts where the held
+    pad = [blank_col] * xoff              # (centred) logo was, with no jump
     if getattr(config, "SCROLL_FROM", "right") == "left":
         # Mirror image of the ticker's motion, not of the letters: the logo
         # sits at the right end and leaves to the right, the text follows.
-        strip = [blank_col] * W + words + gap + logo
+        strip = [blank_col] * W + words + gap + logo + pad
         offsets = range(len(strip) - W, -1, -1)
     else:
-        strip = logo + gap + words + [blank_col] * W
+        strip = pad + logo + gap + words + [blank_col] * W
         offsets = range(len(strip) - W + 1)
     for offset in offsets:
         px = blank()
@@ -152,14 +164,15 @@ def tree_frame(rows_shown=8, phase=0, level=1.0):
     bright, so stepping it makes the stripes shimmer.
     """
     px = blank()
+    xoff = (W - len(TREE[0])) // 2        # centre the 8-wide tree on the display
     for y in range(H):
         if y < H - rows_shown:
             continue
         shade = level * (1.0 if (y + phase) % 2 == 0 else 0.55)
         colour = (int(MINT[0] * shade), int(MINT[1] * shade), int(MINT[2] * shade))
-        for x in range(W):
+        for x in range(len(TREE[y])):
             if TREE[y][x] == "#":
-                px[y * W + x] = colour
+                px[y * W + xoff + x] = colour
     return px
 
 

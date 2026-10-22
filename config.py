@@ -4,10 +4,33 @@
 # GP2 is physical pin 4.
 DATA_PIN = 2
 
-WIDTH = 8
-HEIGHT = 8
+# --- Panel geometry and tiling ------------------------------------------
+# Geometry of a SINGLE physical panel.
+PANEL_W = 8
+PANEL_H = 8
 
-# How the LED chain snakes through the panel. Run test_matrix.py to find out:
+# Two 8x8 panels chained and mounted side by side = one 16x8 display.
+# PANELS lists them in CHAIN ORDER — the order the data reaches them:
+#   Pico DIN -> panel[0] -> (its DOUT) -> panel[1] DIN
+# Each entry is (grid_col, grid_row, rotate180): which cell of the logical
+# grid that panel fills, and whether it is mounted turned 180 degrees relative
+# to the first. Find the right values empirically with test_matrix.py (see the
+# README "Two panels side by side" section): watch which half lights first in
+# the chain-order test, and where the four corners land. Then set these.
+#   - If the SECOND half lights first, swap the two rows (chain order).
+#   - If a panel's image is upside-down/mirrored, set its rotate180 to True.
+PANELS = [
+    (1, 0, False),   # chain 0: RIGHT cell — data reaches this panel first
+    (0, 0, False),   # chain 1: left cell  — fed from the right panel's DOUT
+]
+
+# Logical display size, derived from the tiling — leave these as formulas.
+WIDTH = PANEL_W * (max(c for c, r, _ in PANELS) + 1)
+HEIGHT = PANEL_H * (max(r for c, r, _ in PANELS) + 1)
+
+# How the LED chain snakes through EACH panel (the panels are identical, so one
+# mapping covers both; per-panel placement/rotation is in PANELS above). Run
+# test_matrix.py to find out:
 # it lights the LEDs in chain order, then marks the four corners.
 #   SERPENTINE  rows alternate direction (true for BTF-LIGHTING 8x8 panels)
 #   FLIP_X      mirror left/right
@@ -29,8 +52,9 @@ TRANSPOSE = False
 # upright and unmirrored either way. "right" reads in normal word order.
 SCROLL_FROM = "right"
 
-# 0.0 to 1.0. WS2812Bs are very bright; 0.1 is plenty indoors and on camera.
-BRIGHTNESS = 0.1
+# 0.0 to 1.0. WS2812Bs are very bright; 0.1 is plenty indoors and on camera,
+# 0.03 is dimmer still for a dark room or to cut glare/bloom on video.
+BRIGHTNESS = 0.03
 
 # Current budget in mA. Every frame is scaled down if it would draw more.
 # 300 mA is safe when the panel's 5 V comes from the Pico's VBUS (USB).

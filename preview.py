@@ -18,8 +18,9 @@ PAD = 10
 
 
 def render(px):
-    size = PAD * 2 + PITCH * sign.W
-    glow = Image.new("RGB", (size, size), (10, 10, 12))
+    w = PAD * 2 + PITCH * sign.W
+    h = PAD * 2 + PITCH * sign.H
+    glow = Image.new("RGB", (w, h), (10, 10, 12))
     d = ImageDraw.Draw(glow)
     for y in range(sign.H):
         for x in range(sign.W):

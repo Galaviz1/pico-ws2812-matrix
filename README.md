@@ -60,6 +60,35 @@ this is exactly what the panel shows (one 14 s cycle).*
   If the first LEDs flicker or show random colours, add a 74AHCT125 level
   shifter between GP2 and DIN.
 
+### Two panels side by side (16×8)
+
+Chain a second identical 8×8 panel to double the width — ideal for the scrolling
+sign. The code tiles any number of panels; two side by side make a 16×8 display.
+
+![Breadboard with two chained panels: Pico and 330 Ω data to panel 1; panel 1 DOUT through an optional 330 Ω to panel 2 DIN; 5V and GND carried across; a 220 µF cap across the rails near each panel feed](docs/breadboard-2panel.svg)
+
+1. **Chain the data:** panel 1 **DOUT → panel 2 DIN**. Every WS2812B regenerates
+   the signal, so the short inter-panel hop needs no level shifter; a **330 Ω**
+   in series there is good practice but optional.
+2. **Share power:** 5V and GND carry across to panel 2 (the panels' output
+   connector usually carries all three lines). Add a **second 220 µF** cap across
+   panel 2's 5V/GND.
+3. **Describe the tiling in `config.py`.** `PANELS` lists the panels in **chain
+   order** — the order data reaches them — each as `(grid_col, grid_row,
+   rotate180)`. `WIDTH`/`HEIGHT` derive from it. Everything else (`sign.py`,
+   `preview.py`, `test_matrix.py`) follows automatically.
+4. **Find the arrangement empirically** with `./run_on_pico.sh test_matrix.py`:
+   - In the chain-order sweep, note which **physical** panel lights first. If the
+     right panel lights first, put its cell first in `PANELS` (this bench wires
+     **right-to-left**, so chain 0 is the right cell: `(1, 0, False)`).
+   - In the corners step, if one panel is upside-down/mirrored, set its
+     `rotate180` to `True`.
+
+> **Power at higher brightness:** 128 LEDs is fine on USB at the default low
+> `BRIGHTNESS`, and `MAX_MA` auto-dims to stay safe. To run brighter, feed 5V to
+> **both** panels from an external 5 V supply (power injection) rather than
+> pushing all the current through panel 1 and the inter-panel connector.
+
 ## Power: why there is a current limit
 
 Each WS2812B draws up to ~60 mA at full white, so all 64 can ask for
