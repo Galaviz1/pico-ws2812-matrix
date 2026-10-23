@@ -29,18 +29,18 @@ GREEN = (0, 255, 0)
 WHITE = (255, 255, 255)
 OFF = (0, 0, 0)
 
-# YouTube play button: red rounded body, white triangle pointing RIGHT.
-# 'R' red, 'W' white. For a left-pointing triangle, move the single 'W' in
-# rows 2 and 5 one column right of the 'WW' pair.
+# YouTube play button, 16 wide to span both panels: red rounded body, white
+# triangle pointing RIGHT. 'R' red, 'W' white. Widen/narrow the triangle by
+# adding or removing 'W' per row (keep it symmetric about the middle rows).
 LOGO = [
-    "........",
-    ".RRRRRR.",
-    "RRRWRRRR",
-    "RRRWWRRR",
-    "RRRWWRRR",
-    "RRRWRRRR",
-    ".RRRRRR.",
-    "........",
+    "....RRRRRRRR....",
+    "...RRRWRRRRRR...",
+    "..RRRRWWWRRRRR..",
+    "..RRRRWWWWWRRR..",
+    "..RRRRWWWWWRRR..",
+    "..RRRRWWWRRRRR..",
+    "...RRRWRRRRRR...",
+    "....RRRRRRRR....",
 ]
 
 
